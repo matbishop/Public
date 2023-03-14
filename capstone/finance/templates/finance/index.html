@@ -1,0 +1,65 @@
+{% extends "finance/layout.html" %}
+
+{% block body %}
+    
+    <div class="card-deck">
+        <div class="card bg-light">
+            <div class="card-body">
+            <h5 class="card-title">Calculator</h5>
+            <p class="card-text">Calculate annuity values or convert interest rates between compounding periods</p>
+            <a href="{% url 'calculator' %}" class="btn btn-primary">Calculator</a>
+            </div>
+        </div>
+        <div class="card bg-light">
+            <div class="card-body">
+            <h5 class="card-title">Shares</h5>
+            <p class="card-text">Look up information regarding a particular share</p>
+            <a href="{% url 'shares' %}" class="btn btn-primary">Calculator</a>
+            </div>
+        </div>
+        <div class="card bg-light">
+            <div class="card-body">
+            <h5 class="card-title">Currencies</h5>
+            <p class="card-text">Convert currencies with specified amounts</p>
+            <a href="{% url 'currency' %}" class="btn btn-primary">Currencies</a>
+            </div>
+        </div>
+    </div>
+    
+    {% if user.is_authenticated %}
+        <div class="card-deck">
+            <div class="card bg-light">
+                <div class="card-body">
+                <h5 class="card-title">Transactions</h5>
+                <p class="card-text">Add transactions to your own, personalised portfolio</p>
+                <a href="{% url 'transactions' %}" class="btn btn-primary">Transactions</a>
+                </div>
+            </div>
+            <div class="card bg-light">
+                <div class="card-body">
+                <h5 class="card-title">Portfolio</h5>
+                <p class="card-text">View the status of your current portfolio with all transactions consolidated and converted into USD</p>
+                <a href="{% url 'portfolio' %}" class="btn btn-primary">Portfolio</a>
+                </div>
+            </div>
+        </div>
+    {% else %}
+    <div class="card-deck">
+        <div class="card bg-light">
+            <div class="card-body">
+            <h5 class="card-title">Log In</h5>
+            <p class="card-text">Log in to be able to create a personalised portfolio with real time information on all additions</p>
+            <a href="{% url 'login' %}" class="btn btn-primary">Log In</a>
+            </div>
+        </div>
+        <div class="card w-25 bg-light">
+            <div class="card-body">
+            <h5 class="card-title">Register</h5>
+            <p class="card-text">If you do not have an account yet, register in order to use additional functionality</p>
+            <a href="{% url 'register' %}" class="btn btn-primary">Register</a>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,134 @@
+{% extends "finance/layout.html" %}
+{% load static %}
+
+{% block title %}Calculators{% endblock %}
+
+{% block body %}
+    <h2>Finance Calculators</h2>
+    
+    <h3>Interest Conversion</h3>
+    <div>
+        <form id="interest-conversion">
+            <div class="form-group">
+                <label>Input</label>
+                <div class="input-group">
+                    <input type="number" value="0" class="form-control" id="interest-input">
+                    <div class="input-group-append">
+                        <span class="input-group-text">%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Input Compounding</label>
+                <select class="form-control">
+                    <option>Annually</option>
+                    <option>Semiannually</option>
+                    <option>Quarterly</option>
+                    <option>Monthly</option>
+                    <option>Weekly</option>
+                    <option>Daily</option>
+                    <option>Continuously</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Output Compounding</label>
+                <select class="form-control">
+                    <option>Annually</option>
+                    <option>Semiannually</option>
+                    <option>Quarterly</option>
+                    <option>Monthly</option>
+                    <option>Weekly</option>
+                    <option>Daily</option>
+                    <option>Continuously</option>
+                </select>
+            </div>
+        </form>
+        <button class="btn btn-primary" onclick="interestConversion()">Calculate</button>
+        <div class="alert alert-secondary" role="alert" id="interest-conversion-answer">
+            Enter values and click calculate
+        </div>
+    </div>
+        
+    <h3>Annuity Value</h3>
+    <div>
+        <form id="annuity-value">
+            <div class="form-group">
+                <label>Starting Amount</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">R</span>
+                    </div>
+                    <input type="number" value="0" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Duration</label>
+                <div class="input-group">
+                    <input type="number" value="10" class="form-control" min="0">
+                    <div class="input-group-append">
+                        <span class="input-group-text">years</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Interest Rate</label>
+                <div class="input-group">
+                    <input type="number" value="5" class="form-control">
+                    <div class="input-group-append">
+                        <span class="input-group-text">%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Compounding</label>
+                <select class="form-control">
+                  <option>Annually</option>
+                  <option>Semiannually</option>
+                  <option>Quarterly</option>
+                  <option>Monthly</option>
+                  <option>Weekly</option>
+                  <option>Daily</option>
+                  <option>Continuously</option>
+                </select>
+              </div>
+            <div class="form-group">
+                <label>Contribution</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">R</span>
+                    </div>
+                    <input type="number" value="0" class="form-control">
+                </div>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="durationRadios" id="durationRadios1" value="annually" checked>
+                <label class="form-check-label" for="durationRadios1">
+                  Annually
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="durationRadios" id="durationRadios2" value="monthly">
+                <label class="form-check-label" for="durationRadios2">
+                  Monthly
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="annuityRadios" id="annuityRadios1" value="ordinary" checked>
+                <label class="form-check-label" for="annuityRadios1">
+                  Ordinary Annuity
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="annuityRadios" id="annuityRadios2" value="deferred">
+                <label class="form-check-label" for="annuityRadios2">
+                  Deferred Annuity
+                </label>
+            </div>
+        </form>
+        <button class="btn btn-primary" onclick="annuityValue()" id="annuity-value-btn">Calculate</button>
+        <div class="alert alert-secondary" role="alert" id="annuity-value-answer">
+            Enter values and click calculate
+        </div>
+    </div>
+    
+{% endblock %}

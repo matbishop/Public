@@ -1,0 +1,57 @@
+{% extends "finance/layout.html" %}
+{% load static %}
+
+{% block title %}My Portfolio{% endblock %}
+
+{% block body %}
+
+    <h2>My Portfolio</h2>
+    
+    <div class="alert alert-light" role="alert">
+        Please note that currencies indicated with * have been converted from the respective currency to USD. To view the original and current values in the original currency see <a href="{% url 'transactions' %}">Transactions</a>
+    </div>
+    
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Ticker</th>
+            <th scope="col">Price</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Original Value</th>
+            <th scope="col">Current Value</th>
+            <th scope="col">Change</th>
+            <th scope="col">Currency</th>
+            <th scope="col" style="width: 3px;"></th>
+        </tr>
+        </thead>
+        
+        <tbody>
+            {% for share in portfolio %}
+                <tr>
+                    {% for key, value in share.items %}
+                        <td>{{ value }}</td>
+                    {% endfor %}
+                    {% if "-" not in share.Change %}
+                        <td>🟢</td>
+                    {% else %}
+                        <td>🔴</td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+        </tbody>
+        
+        <tfoot>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th>{{ totals.og_val }}</th>
+                <th>{{ totals.cur_val }}</th>
+                <th>{{ totals.change }}</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </tfoot>
+    </table>
+    
+{% endblock %}

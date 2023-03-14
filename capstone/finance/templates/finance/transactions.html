@@ -1,0 +1,78 @@
+{% extends "finance/layout.html" %}
+{% load static %}
+
+{% block title %}My Transactions{% endblock %}
+
+{% block body %}
+
+    <h2>Transactions</h2>
+    
+    {% if message_good %}
+        <div class="alert alert-success" role="alert">
+            {{ message_good }}
+        </div>
+    {% elif message_bad %}
+        <div class="alert alert-danger" role="alert">
+            {{ message_bad }}
+        </div>
+    {% endif %}
+    
+    <h3>Add Shares</h3>
+    <form action="{% url 'transactions' %}" method="post">
+        <div class="form-group">
+            <div class="input-group" id="transaction-form">
+                {% csrf_token %}
+                {{ form }}
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary" id="add-transaction-btn">Add Transaction</button>
+    </form>
+    
+    <h3 id="transaction-heading">My Transactions</h3>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Ticker</th>
+            <th scope="col">Price</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Original Value</th>
+            <th scope="col">Current Value</th>
+            <th scope="col">Change</th>
+            <th scope="col">Currency</th>
+            <th scope="col" style="text-align: center;">Remove</th>
+        </tr>
+        </thead>
+        
+        <tbody>
+            <form action="{% url 'delete_transaction' %}" method="post">
+                {% csrf_token %}
+                {% for share in transactions %}
+                    <tr>
+                        {% for key, value in share.items %}
+                            {% if key != "id" %}
+                                <td>{{ value }}</td>
+                            {% endif %}
+                        {% endfor %}
+                        <td style="text-align: center;">
+                            <button type="submit" class="btn btn-light btn-sm" name="{{ share.id }}">❌</button>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </form>
+        </tbody>
+        
+        <tfoot>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th>{{ totals.og_val }}</th>
+                <th>{{ totals.cur_val }}</th>
+                <th>{{ totals.change }}</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </tfoot>
+    </table>
+    
+{% endblock %}

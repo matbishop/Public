@@ -1,0 +1,41 @@
+body {
+    margin: 10px;
+}
+
+.card {
+    width: clamp(200px, 400px, 300px);
+}
+
+.card-deck {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#interest-conversion-answer, #annuity-value-answer, #annuity-value-btn, .answer-btn {
+    margin-top: 10px;
+}
+
+#share-info-form, #currency-info-form, #transaction-form {
+    margin-top: 15px;
+    display: block;
+}
+
+#add-transaction-btn {
+    margin-bottom: 20px;
+}
+
+#transaction-heading {
+    margin-bottom: 20px;
+}
+
+#register-alert {
+    margin-top: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+    table{
+        overflow-x: scroll;
+        /* width: 100%; */
+        display: block;
+     }
+}
