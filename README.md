@@ -4,7 +4,7 @@ Included in this directory are a subset of projects I have completed during my s
 
 ## CS50w
 
-- Finance
+- [Finance](/capstone)
 
 
 ## CS50 ai
