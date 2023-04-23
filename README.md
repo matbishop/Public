@@ -7,7 +7,7 @@ Included in this directory are a subset of projects I have completed during my s
 - [Finance](/capstone)
 
 
-## CS50 ai
+## CS50ai
 
 - [Tic-Tac-Toe](/tictactoe)
 - [Minesweeper](/minesweeper)
