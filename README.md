@@ -9,11 +9,11 @@ Included in this directory are a subset of projects I have completed during my s
 
 ## CS50 ai
 
-- Tic-Tac-Toe
-- Minesweeper
-- Pagerank
-- Heredity
-- Shopping
-- Nim
-- Traffic
-- Questions
+- [Tic-Tac-Toe](/tictactoe)
+- [Minesweeper](/minesweeper)
+- [Pagerank](/pagerank)
+- [Heredity](/heredity)
+- [Shopping](/shopping)
+- [Nim](/nim)
+- [Traffic](/traffic)
+- [Questions](/questions)
