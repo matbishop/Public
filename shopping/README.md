@@ -1,11 +1,10 @@
 # Shopping
-*by Matthew Bishop*
 
 Requirements: [https://cs50.harvard.edu/ai/2020/projects/4/shopping/](https://cs50.harvard.edu/ai/2020/projects/4/shopping/)
 
-The project requires the implementation of a nearest-neighbour classifier to determine whether a user will make a online purchase based on session information. 
+> The project implements a nearest-neighbour classifier to determine whether a user will make an online purchase based on session information. 
 
-To measure the output of the model we calculate sensitivity (the true positivity rate) and specificity (the true negative rate).
+To measure the output of the model, sensitivity (the true positivity rate) is calculated as well as specificity (the true negative rate).
 
 ## Functionality
 

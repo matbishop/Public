@@ -1,6 +1,6 @@
 # CS50w Capstone: Finance
 
-Instructions: [https://cs50.harvard.edu/web/2020/projects/final/capstone/](https://cs50.harvard.edu/web/2020/projects/final/capstone/)  
+Requirements: [https://cs50.harvard.edu/web/2020/projects/final/capstone/](https://cs50.harvard.edu/web/2020/projects/final/capstone/)  
 Demo: [https://youtu.be/uStb1hElwqw](https://youtu.be/uStb1hElwqw)
 
 > This is my final project for CS50w. It is a financial application that allows a user to look up price information regarding more than 100 000 worldwide tickers with information obtained from Yahoo Finance. The user can log transactions on any of these tickers and create a portfolio which consolidates these transactions, converts them into a common currency and displays whether the user has made a combined profit or loss. In addition to this is a financial calculator to calculate ordinary and deferred future values for annuities with support for most commonly used interest rate periods. Conversion can also be done to calculate corresponding interest rates for different time periods.

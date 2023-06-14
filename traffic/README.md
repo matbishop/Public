@@ -1,19 +1,18 @@
 # Traffic
-*by Matthew Bishop*
 
 Requirements: [https://cs50.harvard.edu/ai/2020/projects/5/traffic/](https://cs50.harvard.edu/ai/2020/projects/5/traffic/)  
 Demo: [https://youtu.be/qQmKG7mfEOQ](https://youtu.be/qQmKG7mfEOQ)
 
-In this computer vision project [TensorFlow](https://www.tensorflow.org/) is used to build a neural network to classify road signs based on images of the signs. The [GTSRB](http://benchmark.ini.rub.de/?section=gtsrb&subsection=news) dataset is used which contains thousands of images of 43 different road signs.
+> In this computer vision project [TensorFlow](https://www.tensorflow.org/) is used to build a neural network to classify road signs based on images of the signs. The [GTSRB](http://benchmark.ini.rub.de/?section=gtsrb&subsection=news) dataset is used which contains thousands of images of 43 different road signs.
 
-A function needs to be implemented to load the data using numpy multidimensional arrays with the help of [OpenCV](https://docs.opencv.org/4.5.2/index.html), as well as resizing the images and adding labels. This function is also platform agnostic.
+A function is implemented to load the data using NumPy multidimensional arrays with the help of [OpenCV](https://docs.opencv.org/4.5.2/index.html), as well as resizing the images and adding labels. The function is platform agnostic.
 
-Another function to create and compile the neural network model is also made with the help of TensorFlow, and detailed below is the process whereby the parameters for the model were determined.
+In addition another function to create and compile the neural network model is created with the help of TensorFlow - detailed below is the process whereby the parameters for the model were determined.
 
 
 ## Model Training Process
 
-Initially, similar parameters to the example provided in the demonstration are used as a starting point - these are as follows:
+A trial and error approach is required, where parameters similar to the example provided in the demonstration are used as a starting point - these are as follows:
 
 For the convolutional layer 10 different filters are used with a 3x3 kernel. The input shape is specified in the requirements as the size of the images with 3 channel values to take color into account.
 
@@ -27,10 +26,10 @@ Testing these parameters the model initially performs poorly, with accuracy near
 
 Reintroducing a lesser dropout rate of 20% leads to similar accuracy levels but notably reduced loss levels. Adding another hidden layer with identical parameters does not improve the model as currently configured.
 
-Lastly a sigmoid activation function is tried instead of ReLU, which leads to remarkable improvements in accuracy and loss which are calculated as 98% and 0.04 respectively
+Lastly a sigmoid activation function is tried instead of ReLU, which leads to remarkable improvements in accuracy and loss, which are calculated as 98% and 0.04 respectively
 
 ---
 
 #### Miscellaneous
 
-Please note `requirements.txt` specifies a TensorFlow installation for Macs with Apple silicon. Simply replace the two related lines with `tensorflow`
+Please note `requirements.txt` specifies a TensorFlow installation for Macs with Apple silicon. Simply replace the two related lines with `tensorflow` for other devices.
