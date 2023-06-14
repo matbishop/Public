@@ -1,9 +1,8 @@
 # Questions
-*by Matthew Bishop*
 
 Requirements: [https://cs50.harvard.edu/ai/2020/projects/6/questions/](https://cs50.harvard.edu/ai/2020/projects/6/questions/)  
 
-This project relates to natural language processing and functions as a question answering system. Document and passage retrieval is implemented, whereby the system has access to a corpus of text documents. 
+> This project relates to natural language processing and functions as a question answering system. Document and passage retrieval is implemented, whereby the system has access to a corpus of text documents. 
 
 The most relevant document is identified to the user's query whereafter the most relevant passage in the document is determined.
 

@@ -1,9 +1,10 @@
 # Minesweeper
-*by Matthew Bishop*
 
 Requirements: [https://cs50.harvard.edu/ai/2020/projects/1/minesweeper/](https://cs50.harvard.edu/ai/2020/projects/1/minesweeper/)
 
-The project requires the implementation of functionality to play Minesweeper with the help of AI. This is done with propositional logic, which allows for inference and knowledge engineering.
+> The project implements functionality to play Minesweeper with the help of AI. This is done with propositional logic, which allows for inference and knowledge engineering.
+
+The game can be played normally, with the optional help of the model to choose a move.
 
 ## Knowledge Representation
 
